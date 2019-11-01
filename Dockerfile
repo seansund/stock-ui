@@ -4,7 +4,6 @@ RUN mkdir app
 
 # Install npm production packages
 COPY . ./app
-RUN cd ./app; npm install --production
 
 ENV NODE_ENV production
 ENV PORT 3000
@@ -12,6 +11,7 @@ ENV PORT 3000
 EXPOSE 3000/tcp
 
 WORKDIR ./app
+RUN npm install --production
 
 CMD ["npm", "start"]
 
