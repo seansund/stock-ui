@@ -13,49 +13,23 @@ import Header from "./Header";
 import "./patterns.scss";
 
 class StockItemList extends Component {
+  stockService;
+
   constructor(props) {
     super(props);
+
+    this.stockService = props.stockService;
+
     this.state = {
       data: [],
       selectedRow: 0
     };
   }
 
-  componentDidMount() {
-    const data = [
-      {
-        name: "Lin",
-        description: "123 Main Street",
-        stock: "Austin",
-        unitPrice: "TX",
-        picture: "12345",
-        manufacturer: "United States"
-      },
-      {
-        name: "Mak",
-        description: "45 2nd Street",
-        stock: "Austin",
-        unitPrice: "TX",
-        picture: "78766",
-        manufacturer: "United States"
-      },
-      {
-        name: "Joe",
-        description: "40 Down Street",
-        stock: "San Francisco",
-        unitPrice: "CA",
-        picture: "90706",
-        manufacturer: "United States"
-      }
-    ];
-
-    this.setState(Object.assign(
-      {},
-      this.state,
-      {
-        data
-      }
-    ))
+  async componentDidMount() {
+    this.setState({
+        data: await this.stockService.listStockItems(),
+    });
   }
 
   onRowClick = id => {
