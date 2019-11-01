@@ -15,6 +15,13 @@ import "./patterns.scss";
 class StockItemList extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      data: [],
+      selectedRow: 0
+    };
+  }
+
+  componentDidMount() {
     const data = [
       {
         Name: "Lin",
@@ -41,10 +48,14 @@ class StockItemList extends Component {
         Country: "United States"
       }
     ];
-    this.state = {
-      data,
-      selectedRow: 0
-    };
+
+    this.setState(Object.assign(
+      {},
+      this.state,
+      {
+        data
+      }
+    ))
   }
 
   onRowClick = id => {
@@ -83,7 +94,15 @@ class StockItemList extends Component {
 
   render() {
     const data = this.state.data;
-    const columns = Object.keys(data[0]);
+    const columns = [
+      "Name",
+      "Address",
+      "City",
+      "State",
+      "ZipCode",
+      "Country",
+    ];
+
     return (
       <div className="bx--grid pattern-container">
         <Header
