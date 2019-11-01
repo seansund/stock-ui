@@ -24,28 +24,28 @@ class StockItemList extends Component {
   componentDidMount() {
     const data = [
       {
-        Name: "Lin",
-        Address: "123 Main Street",
-        City: "Austin",
-        State: "TX",
-        ZipCode: "12345",
-        Country: "United States"
+        name: "Lin",
+        description: "123 Main Street",
+        stock: "Austin",
+        unitPrice: "TX",
+        picture: "12345",
+        manufacturer: "United States"
       },
       {
-        Name: "Mak",
-        Address: "45 2nd Street",
-        City: "Austin",
-        State: "TX",
-        ZipCode: "78766",
-        Country: "United States"
+        name: "Mak",
+        description: "45 2nd Street",
+        stock: "Austin",
+        unitPrice: "TX",
+        picture: "78766",
+        manufacturer: "United States"
       },
       {
-        Name: "Joe",
-        Address: "40 Down Street",
-        City: "San Francisco",
-        State: "CA",
-        ZipCode: "90706",
-        Country: "United States"
+        name: "Joe",
+        description: "40 Down Street",
+        stock: "San Francisco",
+        unitPrice: "CA",
+        picture: "90706",
+        manufacturer: "United States"
       }
     ];
 
@@ -95,12 +95,12 @@ class StockItemList extends Component {
   render() {
     const data = this.state.data;
     const columns = [
-      "Name",
-      "Address",
-      "City",
-      "State",
-      "ZipCode",
-      "Country",
+      "name",
+      "description",
+      "stock",
+      "unitPrice",
+      "picture",
+      "manufacturer",
     ];
 
     return (
