@@ -55,7 +55,7 @@ class UIShell extends Component {
           <SideNavItems>
             <SideNavMenu
               defaultExpanded
-              icon={<Fade20 />.toString()}
+              icon={<Fade20 />}
               title="Inventory Manager"
             >
               {this.renderSideNavItem("Stock Items")}

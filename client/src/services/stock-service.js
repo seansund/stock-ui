@@ -4,6 +4,10 @@ export class StockService {
   async listStockItems() {
     return superagent
       .get('/api/stock-service')
-      .set('accept', 'json');
+      .set('accept', 'application/json')
+      .then(res => {
+        console.log('Got response: ', res);
+        return res.body;
+      });
   }
 }
