@@ -7,6 +7,7 @@ class UIShellBody extends React.Component {
   components = {
     "Stock Items": StockItemList,
   };
+
   render() {
 // eslint-disable-next-line
     const PatternName = this.components[
@@ -14,7 +15,7 @@ class UIShellBody extends React.Component {
     ];
     return (
       <div className="pattern-container">
-        <PatternName stockService={new StockService()}/>
+        <PatternName stockService={this.props.stockService}/>
       </div>
     );
   }

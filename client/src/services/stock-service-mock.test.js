@@ -1,4 +1,5 @@
 import {StockService} from "./stock-service";
+import {StockServiceMock} from "./stock-service-mock";
 
 describe('stock-service.test', () => {
   test('canary verifies test infrastructure', () => {
@@ -7,7 +8,7 @@ describe('stock-service.test', () => {
 
   let classUnderTest;
   beforeEach(() => {
-    classUnderTest = new StockService();
+    classUnderTest = new StockServiceMock();
   });
 
   describe('given listStockItems()', () => {

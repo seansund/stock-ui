@@ -10,6 +10,7 @@ import {
   SideNavMenuItem,
 } from 'carbon-components-react/lib/components/UIShell/';
 import UIShellBody from "./UIShellBody";
+import {StockService} from "../services/stock-service";
 
 const Fade20 = () => (
   <svg icon width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
@@ -25,6 +26,7 @@ const Fade20 = () => (
 class UIShell extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       patternName: "Stock Items"
     };
@@ -53,14 +55,14 @@ class UIShell extends Component {
           <SideNavItems>
             <SideNavMenu
               defaultExpanded
-              icon={<Fade20 />}
+              icon={<Fade20 />.toString()}
               title="Inventory Manager"
             >
               {this.renderSideNavItem("Stock Items")}
             </SideNavMenu>
           </SideNavItems>
         </SideNav>
-        <Content id="main-content"><UIShellBody patternName={this.state.patternName} /></Content>
+        <Content id="main-content"><UIShellBody stockService={this.props.stockService} patternName={this.state.patternName} /></Content>
       </div>
     );
   }
