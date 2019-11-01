@@ -4,6 +4,8 @@ RUN mkdir app
 
 # Install npm production packages
 COPY package.json ./app
+COPY client ./app/client
+COPY public ./app/public
 RUN cd ./app; npm install --production
 
 COPY . ./app

@@ -80,8 +80,8 @@ class StockItemList extends Component {
     return (
       <div className="bx--grid pattern-container">
         <Header
-          title="Table List"
-          subtitle="This pattern will display and array of model objects in a multi column grid/table."
+          title="Stock items"
+          subtitle="This is the current inventory of items in stock."
         />
         <div className="bx--row">
           <div className="bx--col-xs-12">
