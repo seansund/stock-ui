@@ -1,13 +1,13 @@
-import {Component} from "react";
+import React from 'react';
 import "./patterns.scss";
-import DisplayForm from "./DisplayForm";
 import StockItemList from "./StockItemList";
 
-class UIShellBody extends Component {
+class UIShellBody extends React.Component {
   components = {
     "Stock Items": StockItemList,
   };
   render() {
+// eslint-disable-next-line
     const PatternName = this.components[
       this.props.patternName || "Stock Items"
     ];

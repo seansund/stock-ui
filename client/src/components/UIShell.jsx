@@ -26,7 +26,7 @@ class UIShell extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      patternName: "Display Form"
+      patternName: "Stock Items"
     };
   }
 
@@ -54,21 +54,9 @@ class UIShell extends Component {
             <SideNavMenu
               defaultExpanded
               icon={<Fade20 />}
-              title="12 Design Patterns"
+              title="Inventory Manager"
             >
-              {this.renderSideNavItem("Display Form")}
-              {this.renderSideNavItem("Validating Form")}
-              {this.renderSideNavItem("Update Form")}
-              {this.renderSideNavItem("Validating Form Wizard 1")}
-              {this.renderSideNavItem("Validating Form Wizard 2")}
-              {this.renderSideNavItem("Simple List")}
-              {this.renderSideNavItem("Table List")}
-              {this.renderSideNavItem("List to List")}
-              {this.renderSideNavItem("Linked List")}
-              {this.renderSideNavItem("Master Detail")}
-              {this.renderSideNavItem("Create, Read, Update, Delete")}
-              {this.renderSideNavItem("Search List")}
-              {this.renderSideNavItem("Search Form")}
+              {this.renderSideNavItem("Stock Items")}
             </SideNavMenu>
           </SideNavItems>
         </SideNav>

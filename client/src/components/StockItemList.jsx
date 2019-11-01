@@ -12,7 +12,7 @@ import { iconCheckmarkSolid } from "carbon-icons";
 import Header from "./Header";
 import "./patterns.scss";
 
-class TableList extends Component {
+class StockItemList extends Component {
   constructor(props) {
     super(props);
     const data = [
@@ -120,4 +120,4 @@ class TableList extends Component {
   }
 }
 
-export default TableList;
+export default StockItemList;
