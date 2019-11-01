@@ -7,7 +7,7 @@ export class StockService {
       .set('accept', 'application/json')
       .then(res => {
         console.log('Got response: ', res);
-        return res.body;
+        return res.body || [];
       });
   }
 }
