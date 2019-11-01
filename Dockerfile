@@ -4,11 +4,24 @@ RUN mkdir app
 
 # Install npm production packages
 COPY package.json ./app
-COPY client ./app/client
-COPY public ./app/public
-RUN cd ./app; npm install --production
+COPY package-lock.json ./app
+COPY .babelrc ./app
+COPY tsconfig.json ./app
 
-COPY . ./app
+COPY client/package.json ./app/client
+COPY client/package-lock.json ./app/client
+COPY client/build ./app/client/build
+COPY client/config ./app/client/config
+COPY client/public ./app/client/public
+COPY client/scripts ./app/client/scripts
+COPY client/src ./app/client/src
+
+COPY public ./app/public
+COPY scripts ./app/scripts
+COPY server ./app/server
+COPY test ./app/test
+
+RUN cd ./app; npm install --production
 
 ENV NODE_ENV production
 ENV PORT 3000
